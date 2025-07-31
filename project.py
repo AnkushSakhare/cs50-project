@@ -17,7 +17,7 @@ def main():
     else:
         print("you lose!")
 
-   
+
 def game():
     print("Type 'rock', 'paper', or 'scissors' to play. Type 'quit' to stop.")
 
