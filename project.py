@@ -14,4 +14,8 @@ def main():
         print("You win!")
     else:
         print("you lose!")
+    else:
+        print("it's ties")
+        
+
 
