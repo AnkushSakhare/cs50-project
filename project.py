@@ -69,4 +69,11 @@ def get_result(player 1,player 2):
         returns "player 1 wins"
     else:
         returns "player 2 wins"
-        
+
+def get_rules():
+    print("rock, paper, scissors Ruls")
+    print("- rock beats scissors")
+    print("- sciossors beats paper")
+    print("- paper beats rock")
+    print("- If both players choose the same, It's a tie")
+       
