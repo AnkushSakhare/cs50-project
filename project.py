@@ -69,5 +69,4 @@ def get_result(player 1,player 2):
         returns "player 1 wins"
     else:
         returns "player 2 wins"
-
-
+        
