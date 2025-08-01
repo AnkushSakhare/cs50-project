@@ -17,8 +17,8 @@ def main():
     else:
         print("you lose!")
 
-
-def game():
+# to create a game.
+def get_game():
     print("Type 'rock', 'paper', or 'scissors' to play. Type 'quit' to stop.")
 
     while True:
@@ -44,3 +44,30 @@ def game():
             print("You win!")
         else:
             print("You lose!")
+
+# to find the result of the game.
+def get_result(player 1,player 2):
+
+    Determines the winner of rock, paper, scissors.
+
+    Args:
+        player 1 = choices of player 1('rock', 'paper', or 'scissors')
+        player 2 = choices of player 2('rock', 'paper', or 'scissors')
+
+    returns:
+        str: Result of the game('player 1 wins', 'player 2 wins', or 'Tie')
+
+    reules = {
+        'rock': 'scissors',
+        'scissors': 'paper',
+        'scissors': 'scissors'
+    }
+
+    if player 1 == player 2:
+        returns "Tie"
+    elif rules[player 1] == player 2:
+        returns "player 1 wins"
+    else:
+        returns "player 2 wins"
+
+
