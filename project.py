@@ -73,7 +73,33 @@ def get_result(player 1,player 2):
 def get_rules():
     print("rock, paper, scissors Ruls")
     print("- rock beats scissors")
-    print("- sciossors beats paper")
+    print("- scissors beats paper")
     print("- paper beats rock")
     print("- If both players choose the same, It's a tie")
+
+def get_play():
+    return input("choose rock, paper, or  scissors: ").lower()
+
+def get_computer_play():
+    return random.choice(["rock", "paper", "scissors"])
+
+def determine_winner(user, computer):
+    if user == computer:
+        return "It's a tie!"
+    elif (user == "rock" and computer == "scissors")
+    or \ (user == "scissors" and computer == "paper")
+    or \ (user == "paper" and computer == "rock"):
+        return "You win!"
+    else:
+        return "You lose!"
+
+def get_rules():
+    user = get_play()
+    if user not in ["rock", "paper", "scissors"]:
+        print("Invalid input.")
+        return
+    computer = get_computer_play()
+    print(f"computer chose:{computer}")
+    print(determine_winner(user, computer))
+    
        
