@@ -101,4 +101,12 @@ def get_rules():
     computer = get_computer_play()
     print(f"computer chose:{computer}")
     print(determine_winner(user, computer))
-       
+
+def play():
+    user = get_user_choice()
+    computer = get_computer_choice()
+
+    print(f"you chose: {user}")
+    print(f"computer chose: {computer}")
+
+    print(determine_winner(user, computer))   
