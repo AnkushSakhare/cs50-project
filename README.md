@@ -6,4 +6,19 @@ This is a simple terminal-based Rock, Paper, Scissors game written in Python for
 
 # Rock Paper Scissors - CS50 Final Project
 
+## Description
+This is a simple Rock, Paper, Scissors game created in python as the CS50 Final Project.
+
+## How to Play
+1] Run the program using python project.py
+2] Enter your choice when prompted
+3] The computer will randomly choose its move
+4] The winner will be displayed
+
+## Files
+1] project.py : Main game code
+2] README.md : Project documentation
+
+## Author
+Ankush Sakhare
 
