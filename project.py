@@ -125,4 +125,3 @@ def get_quit():
         print("please enter 'yes' or 'no'")
         answer = input("Do you want to play again? (yes/no): ").lower()
     return answer == "no"
-
