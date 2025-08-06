@@ -80,7 +80,7 @@ def get_rules():
 def get_play():
     return input("choose rock, paper, or  scissors: ").lower()
 
-def get_computer_play():
+def get_computer_choice():
     return random.choice(["rock", "paper", "scissors"])
 
 def determine_winner(user, computer):
@@ -109,4 +109,20 @@ def play():
     print(f"you chose: {user}")
     print(f"computer chose: {computer}")
 
-    print(determine_winner(user, computer))   
+    print(determine_winner(user, computer))
+
+def get_user_choice():
+    choice = input("Enter your choice (rock, paper, scissors): ").lower()
+
+    while choice not in ["rock", "paper", "scissors"]:
+        print("Invalid choice")
+        choice = input("Enter rock, paper, or scissors: ").lower()
+    return choice
+
+def get_quit():
+    answer = input("Do you want to play again? (yes/no): ").lower()
+    while answer not in["yes" or "no"]:
+        print("please enter 'yes' or 'no'")
+        answer = input("Do you want to play again? (yes/no): ").lower()
+    return answer == "no"
+
