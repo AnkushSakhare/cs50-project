@@ -118,6 +118,10 @@ def get_user_choice():
         print("Invalid choice")
         choice = input("Enter rock, paper, or scissors: ").lower()
     return choice
+def get_player_vs_player():
+    
+
+
 
 def get_quit():
     answer = input("Do you want to play again? (yes/no): ").lower()
