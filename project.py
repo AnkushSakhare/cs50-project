@@ -1,6 +1,7 @@
 import random
 
 
+
 def main():
     choices = ["rock", "paper", "scissors"]
     user = input("choose rock, paper, or scissors: ").lower()
@@ -9,10 +10,9 @@ def main():
     print(f"game choice:{games} ")
     if user == game:
         print("It's a tie!")
-    elif (user == "rock" and game == "scissors")
-    or \ (user == "paper" and game == "rock")
-    or \ (user == "scissors" and game == "paper"):
-    
+    elif ((user == "rock" and game == "scissors") or
+    (user == "paper" and game == "rock") or 
+    (user == "scissors" and game == "paper")):
         print("You win!")
     else:
         print("you lose!")
@@ -46,7 +46,7 @@ def get_game():
             print("You lose!")
 
 # to find the result of the game.
-def get_result(player 1,player 2):
+def get_result(player1, player2):
 
     Determines the winner of rock, paper, scissors.
 
@@ -86,12 +86,13 @@ def get_computer_choice():
 def determine_winner(user, computer):
     if user == computer:
         return "It's a tie!"
-    elif (user == "rock" and computer == "scissors")
-    or \ (user == "scissors" and computer == "paper")
-    or \ (user == "paper" and computer == "rock"):
+    elif ((user == "rock" and computer == "scissors")
+    
+    or \ (user == "paper" and computer == "rock")
+    
+    or \ (user == "scissors" and computer == "paper")):
         return "You win!"
-    else:
-        return "You lose!"
+
 
 def get_rules():
     user = get_play()
@@ -118,14 +119,35 @@ def get_user_choice():
         print("Invalid choice")
         choice = input("Enter rock, paper, or scissors: ").lower()
     return choice
+
 def get_player_vs_player():
+    valid = ['rock', 'paper', 'scissors']
+
+    # player 1 input
+    p1 = input("Player 1 enter rock/paper/scisspors: ").strip().lower()
+
+    while p1 not in valid:
+        print("Invalid choice. Try again.")
+
+        p1 = input("Player 1 enter rock/paper/scissors: ").strip().lower()
+
+    # player 2 input
+    p2 = input("Player 2 enter rock/paper/scissors: ").strip().lower()
+
+    while p2 not in valid:
+        print("Invalid choice. Try again.")
+
+        p2 = input("Player 2 enter rock/paper/scissors: ").strip().lower()
+
+    return p1, p2
     
-
-
-
 def get_quit():
     answer = input("Do you want to play again? (yes/no): ").lower()
     while answer not in["yes" or "no"]:
         print("please enter 'yes' or 'no'")
         answer = input("Do you want to play again? (yes/no): ").lower()
     return answer == "no"
+
+
+if __name__ == "__main__":
+    main()
