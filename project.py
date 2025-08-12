@@ -1,153 +1,114 @@
 import random
 
+# Global choices list
+choices = ["rock", "paper", "scissors"]
 
+# Function to display game rules
+def show_rules():
+    print("\n--- Rock, Paper, Scissors Rules ---")
+    print("- Rock beats Scissors")
+    print("- Scissors beats Paper")
+    print("- Paper beats Rock")
+    print("- If both players choose the same, it's a tie\n")
 
-def main():
-    choices = ["rock", "paper", "scissors"]
-    user = input("choose rock, paper, or scissors: ").lower()
-    games = random.choice(choices)
-
-    print(f"game choice:{games} ")
-    if user == game:
-        print("It's a tie!")
-    elif ((user == "rock" and game == "scissors") or
-    (user == "paper" and game == "rock") or 
-    (user == "scissors" and game == "paper")):
-        print("You win!")
-    else:
-        print("you lose!")
-
-# to create a game.
-def get_game():
-    print("Type 'rock', 'paper', or 'scissors' to play. Type 'quit' to stop.")
-
-    while True:
-        user_choice = input("Your choice: ").lower()
-        
-        if user_choice == 'quit':
-            print("Thanks for playing!")
-            break
-        if user_choice not in choices:
-            print("Invalid choice. Try again.")
-            continue
-
-        computer_choice = random.choice(choices)
-        print(f"Computer chose: {computer_choice}")
-
-        if user_choice == computer_choice:
-            print("It's a tie!")
-        elif (
-            (user_choice == 'rock' and computer_choice == 'scissors') or
-            (user_choice == 'paper' and computer_choice == 'rock') or
-            (user_choice == 'scissors' and computer_choice == 'paper')
-        ):
-            print("You win!")
-        else:
-            print("You lose!")
-
-# to find the result of the game.
-def get_result(player1, player2):
-
-    Determines the winner of rock, paper, scissors.
-
-    Args:
-        player 1 = choices of player 1('rock', 'paper', or 'scissors')
-        player 2 = choices of player 2('rock', 'paper', or 'scissors')
-
-    returns:
-        str: Result of the game('player 1 wins', 'player 2 wins', or 'Tie')
-
-    reules = {
-        'rock': 'scissors',
-        'scissors': 'paper',
-        'scissors': 'scissors'
-    }
-
-    if player 1 == player 2:
-        returns "Tie"
-    elif rules[player 1] == player 2:
-        returns "player 1 wins"
-    else:
-        returns "player 2 wins"
-
-def get_rules():
-    print("rock, paper, scissors Ruls")
-    print("- rock beats scissors")
-    print("- scissors beats paper")
-    print("- paper beats rock")
-    print("- If both players choose the same, It's a tie")
-
-def get_play():
-    return input("choose rock, paper, or  scissors: ").lower()
-
-def get_computer_choice():
-    return random.choice(["rock", "paper", "scissors"])
-
-def determine_winner(user, computer):
-    if user == computer:
-        return "It's a tie!"
-    elif ((user == "rock" and computer == "scissors")
-    
-    or \ (user == "paper" and computer == "rock")
-    
-    or \ (user == "scissors" and computer == "paper")):
-        return "You win!"
-
-
-def get_rules():
-    user = get_play()
-    if user not in ["rock", "paper", "scissors"]:
-        print("Invalid input.")
-        return
-    computer = get_computer_play()
-    print(f"computer chose:{computer}")
-    print(determine_winner(user, computer))
-
-def play():
-    user = get_user_choice()
-    computer = get_computer_choice()
-
-    print(f"you chose: {user}")
-    print(f"computer chose: {computer}")
-
-    print(determine_winner(user, computer))
-
+# Get user choice with validation
 def get_user_choice():
     choice = input("Enter your choice (rock, paper, scissors): ").lower()
-
-    while choice not in ["rock", "paper", "scissors"]:
-        print("Invalid choice")
+    while choice not in choices:
+        print("Invalid choice. Try again.")
         choice = input("Enter rock, paper, or scissors: ").lower()
     return choice
 
-def get_player_vs_player():
-    valid = ['rock', 'paper', 'scissors']
+# Get computer's random choice
+def get_computer_choice():
+    return random.choice(choices)
 
-    # player 1 input
-    p1 = input("Player 1 enter rock/paper/scisspors: ").strip().lower()
+# Determine winner
+def determine_winner(user, computer):
+    if user == computer:
+        return "It's a tie!"
+    elif (user == "rock" and computer == "scissors") or \
+         (user == "paper" and computer == "rock") or \
+         (user == "scissors" and computer == "paper"):
+        return "You win!"
+    else:
+        return "Computer wins!"
 
-    while p1 not in valid:
-        print("Invalid choice. Try again.")
+# Player vs. Computer game round
+def play_user_vs_computer():
+    user = get_user_choice()
+    computer = get_computer_choice()
+    print(f"You chose: {user}")
+    print(f"Computer chose: {computer}")
+    print(determine_winner(user, computer))
 
-        p1 = input("Player 1 enter rock/paper/scissors: ").strip().lower()
+# Player vs. Player game round
+def play_player_vs_player():
+    print("\n--- Player 1 ---")
+    player1 = get_user_choice()
+    print("\n" * 50)  # Clear screen simulation
 
-    # player 2 input
-    p2 = input("Player 2 enter rock/paper/scissors: ").strip().lower()
+    print("--- Player 2 ---")
+    player2 = get_user_choice()
+    print(f"Player 1 chose: {player1}")
+    print(f"Player 2 chose: {player2}")
+    result = determine_pvp_winner(player1, player2)
+    print(result)
 
-    while p2 not in valid:
-        print("Invalid choice. Try again.")
+# Determine PvP winner
+def determine_pvp_winner(p1, p2):
+    if p1 == p2:
+        return "It's a tie!"
+    elif (p1 == "rock" and p2 == "scissors") or \
+         (p1 == "paper" and p2 == "rock") or \
+         (p1 == "scissors" and p2 == "paper"):
+        return "Player 1 wins!"
+    else:
+        return "Player 2 wins!"
 
-        p2 = input("Player 2 enter rock/paper/scissors: ").strip().lower()
-
-    return p1, p2
-    
-def get_quit():
+# Ask if user wants to quit
+def ask_to_quit():
     answer = input("Do you want to play again? (yes/no): ").lower()
-    while answer not in["yes" or "no"]:
-        print("please enter 'yes' or 'no'")
+    while answer not in ["yes", "no"]:
+        print("Please enter 'yes' or 'no'.")
         answer = input("Do you want to play again? (yes/no): ").lower()
     return answer == "no"
 
+# Game mode selection
+def choose_mode():
+    print("\nSelect Game Mode:")
+    print("1. Player vs Computer")
+    print("2. Player vs Player")
+    print("3. Show Rules")
+    print("4. Quit")
 
+    choice = input("Enter your choice (1-4): ").strip()
+    return choice
+
+# Main game loop
+def main():
+    print("Welcome to Rock, Paper, Scissors!")
+
+    while True:
+        mode = choose_mode()
+
+        if mode == "1":
+            play_user_vs_computer()
+        elif mode == "2":
+            play_player_vs_player()
+        elif mode == "3":
+            show_rules()
+        elif mode == "4":
+            print("Thanks for playing!")
+            break
+        else:
+            print("Invalid choice. Please choose 1, 2, 3, or 4.")
+            continue
+
+        if ask_to_quit():
+            print("Goodbye!")
+            break
+
+# Run the game
 if __name__ == "__main__":
     main()
