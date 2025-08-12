@@ -1,5 +1,6 @@
 # cs50-project
 My final project for cs50p python course.
+
 Video Demo:  <URL HERE>         
 
 # Rock, Paper, Scissors Game
@@ -21,5 +22,4 @@ This is a simple Rock, Paper, Scissors game created in python as the CS50 Final 
 2] README.md : Project documentation.
 
 ## Author
-Ankush Sakhare
-
+Ankush Sakhare      
