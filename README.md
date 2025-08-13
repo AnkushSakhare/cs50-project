@@ -1,7 +1,7 @@
 # cs50p-project
 My final project for cs50p python course.
 
-Video Demo:  <URL HERE>         
+Video Demo: https://youtu.be/E-cztcsWwnw         
 
 # Rock, Paper, Scissors Game
 This is a simple terminal-based Rock, Paper, Scissors game written in Python for the CS50P final project.
